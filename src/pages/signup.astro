@@ -1,35 +1,40 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Welcome!</title>
-  </head>
-
-  <body class="bg-gray-200">
-    <div class="py-8">
-      <nav class="flex justify-center space-x-10 pb-10">
-        <a href="/" class="font-medium text-gray-500 hover:text-gray-900"
-          >Home</a
-        >
-        <a href="/pricing" class="font-bold text-gray-500 hover:text-gray-900"
-          >Pricing</a
-        >
-        <a href="/blog" class="font-medium text-gray-500 hover:text-gray-900"
-          >Blog</a
-        >
-        <a href="/login" class="font-medium text-gray-500 hover:text-gray-900"
-          >Login</a
-        >
-        <a
-          href="/signup"
-          class="font-medium text-white hover:bg-blue-600 bg-blue-500 px-3 py-2 -mt-2 rounded-lg"
-          >Sign up</a
-        >
-      </nav>
-
-      
-        
+---
+import Layout from '../layouts/common.astro'
+---
+<Layout title="Signup">
+	
+  <form class="mx-auto max-w-md space-y-6 bg-white py-8 px-10 rounded-lg shadow" 
+    action="http://localhost:3001/signup" method="POST">
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">
+        Email address
+      </label>
+      <div class="mt-1">
+        <input id="email" name="email" type="email" required class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm">
+      </div>
     </div>
-  </body>
-</html>
+
+    <div>
+      <label for="password" class="block text-sm font-medium text-gray-700">
+        Password
+      </label>
+      <div class="mt-1">
+        <input id="password" name="password" type="password" required class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm">
+      </div>
+    </div>
+
+    <div>
+      <label for="password_confirmation" class="block text-sm font-medium text-gray-700">
+        Password confirmation
+      </label>
+      <div class="mt-1">
+        <input id="password_confirmation" name="password_confirmation" type="password" required class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm">
+      </div>
+    </div>
+
+    <div>
+      <input type="submit" value="Sign up" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" />
+    </div>
+  </form>
+
+</Layout>
